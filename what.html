@@ -1,0 +1,658 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raffaello: A New Approach to Creation</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+      body {
+          font-family: 'Poppins', sans-serif;
+          background-color: #f7f7f7;
+          color: #333;
+      }
+
+      .navbar {
+          background-color: #fff;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+          background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+      }
+
+      .comparison-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-bottom: 2rem;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+          border: 1px solid #ddd;
+          padding: 0.75rem;
+          text-align: left;
+      }
+
+      .comparison-table th {
+          background-color: #f2f2f2;
+          font-weight: 600;
+      }
+
+      .footer {
+          background-color: #fff;
+          border-top: 1px solid #ddd;
+      }
+
+      /* Animation */
+      .fade-in {
+          animation: fadeIn 1s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+          from {
+              opacity: 0;
+              transform: translateY(-20px);
+          }
+          to {
+              opacity: 1;
+              transform: translateY(0);
+          }
+      }
+
+      /* SVG Animation */
+      .logo-animation {
+          animation: rotateLogo 5s linear infinite;
+      }
+
+      @keyframes rotateLogo {
+          from {
+              transform: rotate(0deg);
+          }
+          to {
+              transform: rotate(360deg);
+          }
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <!-- Navbar -->
+    <nav class="navbar py-2 fixed top-0 w-full z-10 bg-white/70 backdrop-blur-md shadow-md transform translate-y-[-100%] transition-transform duration-500 ease-out">
+      <div class="container mx-auto px-4 flex items-center justify-between">
+        <a href="#" class="flex items-center">
+          <img src="https://raffaello.dev/_next/static/media/logo-icon.2c80858d.svg" alt="Raffaello Logo" class="h-8 w-8 mr-2">
+          <span class="font-semibold text-xl text-gray-800">Raffaello</span>
+        </a>
+        <div class="space-x-6">
+          <a href="#" class="text-gray-600 hover:text-gray-900 hover:translate-y-[-2px] transition duration-300 inline-block">Home</a>
+          <a href="#" class="text-gray-600 hover:text-gray-900 hover:translate-y-[-2px] transition duration-300 inline-block">Who</a>
+          <a href="#" class="text-gray-600 hover:text-gray-900 hover:translate-y-[-2px] transition duration-300 inline-block">What</a>
+          <a href="#" class="text-gray-600 hover:text-gray-900 hover:translate-y-[-2px] transition duration-300 inline-block">Why</a>
+          <a href="https://www.raffaello.dev/en/" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300 inline-block">Get Started</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="mt-20">
+      <!-- Header -->
+      <header class="header py-20 text-center fade-in">
+        <div class="container mx-auto px-4">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Raffaello: A New Approach to Creation
+          </h1>
+          <p class="text-lg text-gray-700">
+            Unlocking Your Creative Potential on the Web.
+          </p>
+        </div>
+      </header>
+
+      <!-- Section: The Unnecessary Complexity of Web Creation -->
+      <section class="py-12">
+        <section class="py-16">
+          <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <!-- Illustration -->
+            <div class="md:w-1/2 lg:w-1/3 mb-8 md:mb-0 md:mr-8">
+              <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+                <defs>
+                  <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1"></stop>
+                    <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1"></stop>
+                  </linearGradient>
+                </defs>
+                <path d="M50 50 C 100 0, 300 0, 350 50" stroke="url(#grad1)" stroke-width="8" stroke-linecap="round" class="path-animation"></path>
+                <path d="M50 150 C 100 100, 300 100, 350 150" stroke="url(#grad1)" stroke-width="8" stroke-linecap="round" stroke-dasharray="20" stroke-dashoffset="20" class="path-animation"></path>
+                <path d="M50 250 C 100 200, 300 200, 350 250" stroke="url(#grad1)" stroke-width="8" stroke-linecap="round" stroke-dasharray="30" stroke-dashoffset="30" class="path-animation"></path>
+                <circle cx="50" cy="50" r="10" fill="#6366F1" class="circle-animation"></circle>
+                <circle cx="350" cy="50" r="10" fill="#8B5CF6" class="circle-animation"></circle>
+                <circle cx="50" cy="150" r="10" fill="#6366F1" class="circle-animation"></circle>
+                <circle cx="350" cy="150" r="10" fill="#8B5CF6" class="circle-animation"></circle>
+                <circle cx="50" cy="250" r="10" fill="#6366F1" class="circle-animation"></circle>
+                <circle cx="350" cy="250" r="10" fill="#8B5CF6" class="circle-animation"></circle>
+              </svg>
+            </div>
+
+            <!-- Text Content -->
+            <div class="md:w-1/2 lg:w-2/3">
+              <h2 class="text-3xl font-semibold mb-6">
+                The Unnecessary Complexity of Web Creation
+              </h2>
+              <p class="text-gray-800 leading-relaxed">
+                Embarking on the journey of web creation today often feels like
+                navigating a labyrinth. What should be a straightforward path to
+                bringing ideas online is frequently mired in unnecessary
+                complexity. We rely on convoluted frameworks, juggle countless
+                dependencies, and wrestle with setups that feel inherently
+                brittle. This intricate landscape has inadvertently created a
+                significant barrier, making the ability to build on the web a
+                privilege often reserved for those with specific technical
+                skills and considerable resources. Furthermore, the use of
+                proprietary tools can leave creators feeling a frustrating sense
+                of 'stolen ownership' – their creations are trapped within
+                platforms they don't fully control.
+              </p>
+            </div>
+          </div>
+
+          <style>
+            .path-animation {
+                animation: drawPath 5s linear infinite alternate;
+            }
+
+            .circle-animation {
+                animation: pulse 3s ease-in-out infinite alternate;
+            }
+
+            @keyframes drawPath {
+                0% {
+                    stroke-dashoffset: 100;
+                }
+                100% {
+                    stroke-dashoffset: 0;
+                }
+            }
+
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                    opacity: 0.8;
+                }
+                100% {
+                    transform: scale(1.2);
+                    opacity: 1;
+                }
+            }
+          </style>
+        </section>
+      </section>
+
+      <!-- Section: The Disconnect: Code vs. Creation -->
+      <section class="py-12 bg-gray-50">
+        <section class="py-16 bg-gray-50">
+          <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <!-- Illustration -->
+            <div class="md:w-1/2 lg:w-1/3 mb-8 md:mb-0 md:mr-8 relative">
+              <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+                <!-- Disconnected Path -->
+                <path d="M50 50 L 150 50 L 150 100 L 250 100 L 250 50 L 350 50" stroke="#F56565" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="20" stroke-dashoffset="20" class="disconnected-path"></path>
+
+                <!-- Connected Path -->
+                <path d="M50 250 C 150 250, 150 200, 250 200 C 350 200, 350 250, 350 250" stroke="#68D391" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" class="connected-path"></path>
+
+                <!-- Labels -->
+                <text x="50" y="40" font-size="12" fill="#F56565" text-anchor="middle">
+                  Code
+                </text>
+                <text x="350" y="40" font-size="12" fill="#F56565" text-anchor="middle">
+                  Creation
+                </text>
+                <text x="50" y="240" font-size="12" fill="#68D391" text-anchor="middle">
+                  Code
+                </text>
+                <text x="350" y="240" font-size="12" fill="#68D391" text-anchor="middle">
+                  Creation
+                </text>
+
+                <!-- Shapes -->
+                <circle cx="50" cy="50" r="8" fill="#F56565" class="pulse"></circle>
+                <circle cx="350" cy="50" r="8" fill="#F56565" class="pulse"></circle>
+                <circle cx="50" cy="250" r="8" fill="#68D391" class="pulse"></circle>
+                <circle cx="350" cy="250" r="8" fill="#68D391" class="pulse"></circle>
+              </svg>
+            </div>
+
+            <!-- Text Content -->
+            <div class="md:w-1/2 lg:w-2/3">
+              <h2 class="text-3xl font-semibold mb-6">
+                The Disconnect: Code vs. Creation
+              </h2>
+              <p class="text-gray-800 leading-relaxed">
+                A fundamental issue in traditional web development is the
+                disconnect between the act of writing code and the immediate
+                visualization of the creative outcome. This separation hinders
+                the creative flow. It's a problem highlighted by the principle:
+                <b>'Creators need an immediate connection to what they are
+                  creating.'</b>
+                This isn't just about speed; it's about the feeling of directly
+                shaping your vision. It's about seeing changes instantly,
+                manipulating elements directly, and iterating rapidly in a fluid
+                creative loop.
+              </p>
+            </div>
+          </div>
+
+          <style>
+            .disconnected-path {
+                animation: dash 5s linear infinite;
+            }
+
+            .connected-path {
+                animation: draw 5s linear forwards;
+            }
+
+            @keyframes dash {
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+
+            @keyframes draw {
+                0% {
+                    stroke-dasharray: 1000;
+                    stroke-dashoffset: 1000;
+                    fill: transparent;
+                }
+                100% {
+                    stroke-dasharray: 0;
+                    stroke-dashoffset: 0;
+                    fill: transparent;
+                }
+            }
+
+            .pulse {
+                animation: pulse-animation 2s infinite alternate;
+            }
+
+            @keyframes pulse-animation {
+                0% {
+                    transform: scale(1);
+                    opacity: 0.7;
+                }
+                100% {
+                    transform: scale(1.1);
+                    opacity: 1;
+                }
+            }
+          </style>
+        </section>
+      </section>
+
+      <!-- Section: Our Mission: A Web for Everyone -->
+      <section class="py-12">
+        <section class="py-16">
+          <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <!-- Illustration -->
+            <div class="md:w-1/2 lg:w-1/3 mb-8 md:mb-0 md:mr-8">
+              <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+                <defs>
+                  <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1"></stop>
+                    <stop offset="100%" style="stop-color:#6366F1;stop-opacity:1"></stop>
+                  </linearGradient>
+                </defs>
+
+                <!-- Circles -->
+                <circle cx="100" cy="75" r="20" fill="url(#circleGradient)" class="circle-animation"></circle>
+                <circle cx="300" cy="75" r="20" fill="url(#circleGradient)" class="circle-animation"></circle>
+                <circle cx="200" cy="150" r="20" fill="url(#circleGradient)" class="circle-animation"></circle>
+                <circle cx="100" cy="225" r="20" fill="url(#circleGradient)" class="circle-animation"></circle>
+                <circle cx="300" cy="225" r="20" fill="url(#circleGradient)" class="circle-animation"></circle>
+
+                <!-- Connecting Lines -->
+                <line x1="120" y1="75" x2="180" y2="140" stroke="#9CA3AF" stroke-width="3" class="line-animation"></line>
+                <line x1="320" y1="75" x2="220" y2="140" stroke="#9CA3AF" stroke-width="3" class="line-animation"></line>
+                <line x1="120" y1="225" x2="180" y2="160" stroke="#9CA3AF" stroke-width="3" class="line-animation"></line>
+                <line x1="320" y1="225" x2="220" y2="160" stroke="#9CA3AF" stroke-width="3" class="line-animation"></line>
+              </svg>
+            </div>
+
+            <!-- Text Content -->
+            <div class="md:w-1/2 lg:w-2/3">
+              <h2 class="text-3xl font-semibold mb-6">
+                Our Mission: A Web for Everyone
+              </h2>
+              <p class="text-gray-800 leading-relaxed">
+                Driven by the belief that creativity should be the only
+                prerequisite for building on the web, our mission is clear: to
+                democratize online creation. We envision a world where anyone
+                with a vision can bring it to life online, regardless of their
+                technical background, expertise, financial resources, or
+                location. Our goal is to enable creation from anywhere, in any
+                language, on any device. This is about breaking down artificial
+                barriers and unlocking global creative potential.
+              </p>
+            </div>
+          </div>
+
+          <style>
+            .circle-animation {
+                animation: pulse 4s infinite alternate;
+            }
+
+            .line-animation {
+                animation: drawLine 6s linear infinite;
+            }
+
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                    opacity: 0.8;
+                }
+                100% {
+                    transform: scale(1.1);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes drawLine {
+                0% {
+                    stroke-dasharray: 100;
+                    stroke-dashoffset: 100;
+                }
+                100% {
+                    stroke-dasharray: 0;
+                    stroke-dashoffset: 0;
+                }
+            }
+          </style>
+        </section>
+      </section>
+
+      <!-- Section: Introducing Raffaello: The Creator's Platform -->
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+          <!-- Illustration -->
+          <div class="md:w-1/2 lg:w-1/3 mb-8 md:mb-0 md:mr-8">
+            <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+              <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:#A78BFA;stop-opacity:1"></stop>
+                  <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1"></stop>
+                </linearGradient>
+              </defs>
+
+              <!-- Abstract Figure (Inspired by Raphael) -->
+              <path d="M100 250 C 150 280, 250 280, 300 250" stroke="url(#grad1)" stroke-width="8" stroke-linecap="round" class="figure-animation"></path>
+              <path d="M100 50 L 300 50" stroke="url(#grad1)" stroke-width="8" stroke-linecap="round" class="figure-animation"></path>
+              <path d="M200 50 L 200 150" stroke="url(#grad1)" stroke-width="8" stroke-linecap="round" class="figure-animation"></path>
+
+              <!-- Details -->
+              <circle cx="100" cy="50" r="10" fill="#A78BFA" class="circle-animation"></circle>
+              <circle cx="300" cy="50" r="10" fill="#8B5CF6" class="circle-animation"></circle>
+              <circle cx="200" cy="250" r="10" fill="#A78BFA" class="circle-animation"></circle>
+            </svg>
+          </div>
+
+          <!-- Text Content -->
+          <div class="md:w-1/2 lg:w-2/3">
+            <h2 class="text-3xl font-semibold mb-6">
+              Introducing Raffaello: The Creator's Platform
+            </h2>
+
+            <!-- Story of Raphael Sanzio -->
+            <p class="text-gray-600 italic mb-4">
+              "Inspired by Raphael Sanzio, the Renaissance master known for his
+              clarity, harmony, and pursuit of perfection. Just as Raphael
+              sought to elevate art, we aim to elevate web creation, making it
+              accessible and beautiful for everyone."
+            </p>
+
+            <p class="text-gray-800 leading-relaxed">
+              <a href="https://www.raffaello.dev/en/" class="text-blue-500 hover:text-blue-700">Raffaello</a>
+              is the direct result of this mission and the embodiment of the
+              principle of immediate connection. It's built to fundamentally
+              rethink the web creation process, shifting the focus from the
+              'engineer' mindset – wrestling with code and configurations – to
+              the 'creator' mindset, where your vision and design take center
+              stage. Raffaello is the platform designed to make sophisticated
+              web creation accessible, powerful, and intuitive for everyone.
+            </p>
+          </div>
+        </div>
+
+        <style>
+          .figure-animation {
+              animation: drawFigure 5s linear infinite alternate;
+          }
+
+          .circle-animation {
+              animation: pulse 4s infinite alternate;
+          }
+
+          @keyframes drawFigure {
+              0% {
+                  stroke-dashoffset: 100;
+              }
+              100% {
+                  stroke-dashoffset: 0;
+              }
+          }
+
+          @keyframes pulse {
+              0% {
+                  transform: scale(1);
+                  opacity: 0.8;
+              }
+              100% {
+                  transform: scale(1.1);
+                  opacity: 1;
+              }
+          }
+        </style>
+      </section>
+
+      <!-- Section: Comparing Web Creation Tools -->
+      <section class="py-12">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-semibold mb-6">
+            Comparing Web Creation Tools
+          </h2>
+          <p class="text-gray-800 leading-relaxed mb-4">
+            Understanding where Raffaello fits requires looking at the existing
+            landscape. We compare Traditional Coding, Website Builders, and AI
+            Builders based on criteria vital to creators.
+          </p>
+
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature / Tool</th>
+                <th>Traditional Coding (IDEs)</th>
+                <th>Website Builders</th>
+                <th>AI Builders</th>
+                <th>Raffaello</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ease of Use / Learning Curve</td>
+                <td>Very High Complexity</td>
+                <td>Low Complexity</td>
+                <td>Very Low Complexity</td>
+                <td>Low Complexity</td>
+              </tr>
+              <tr>
+                <td>Creative Freedom / Customization</td>
+                <td>Unlimited</td>
+                <td>Limited (Template-Based)</td>
+                <td>Moderate (AI Constraints)</td>
+                <td>Unlimited</td>
+              </tr>
+              <tr>
+                <td>Code Ownership &amp; Portability</td>
+                <td>Full Ownership (Standard Code)</td>
+                <td>None (Platform Lock-in)</td>
+                <td>Varies (Check Terms)</td>
+                <td>Full Ownership (Standard Code)</td>
+              </tr>
+              <tr>
+                <td>Cost (Initial &amp; Ongoing)</td>
+                <td>Often Free Tools, High Time Cost</td>
+                <td>Monthly/Annual Subscriptions</td>
+                <td>Varies (Subscription/Credits)</td>
+                <td>Free to Start, Credit-Based Building</td>
+              </tr>
+              <tr>
+                <td>Speed to Go Live (Simple Site)</td>
+                <td>Slow</td>
+                <td>Fast</td>
+                <td>Very Fast</td>
+                <td>Fast</td>
+              </tr>
+              <tr>
+                <td>Flexibility for Complex Projects</td>
+                <td>Very High</td>
+                <td>Limited</td>
+                <td>Moderate</td>
+                <td>Very High</td>
+              </tr>
+              <tr>
+                <td>Requires Deep Technical Skills?</td>
+                <td>Yes</td>
+                <td>No</td>
+                <td>No</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Potential for Vendor Lock-in?</td>
+                <td>No</td>
+                <td>High</td>
+                <td>Varies</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Direct Connection to Creation</td>
+                <td>Disconnected</td>
+                <td>Moderate</td>
+                <td>Disconnected</td>
+                <td>Immediate</td>
+              </tr>
+              <tr>
+                <td>Primary Focus</td>
+                <td>Technology/Syntax</td>
+                <td>Ease of Use</td>
+                <td>Automation/Speed</td>
+                <td>Creator/Vision</td>
+              </tr>
+              <tr>
+                <td>Collaboration Potential</td>
+                <td>High (Manual)</td>
+                <td>Moderate (Platform)</td>
+                <td>Low</td>
+                <td>High (Tool Support)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Elaboration on Comparison Points -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">On Code Ownership:</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Unlike many platforms that keep your work locked within their
+                system, Raffaello ensures you fully own the clean, standard code
+                generated. You are free to export, modify, and host it anywhere,
+                giving you ultimate control over your digital assets.
+              </p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">On Cost:</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Traditional builders often rely on recurring monthly
+                subscriptions that become a perpetual cost. Raffaello offers a
+                fundamentally different, more accessible model: it's free to
+                explore and use indefinitely, and you only purchase affordable
+                credits specifically for building and publishing pages. This
+                makes powerful web creation accessible without ongoing financial
+                burden.
+              </p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">
+                On Immediate Connection:
+              </h3>
+              <p class="text-gray-700 leading-relaxed">
+                Raffaello is built around the principle of seeing your creative
+                changes happen instantly. This direct feedback loop fosters a
+                fluid workflow, allowing you to experiment and iterate rapidly,
+                keeping you connected to your vision.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Who is Raffaello For? -->
+      <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-semibold mb-6">Who is Raffaello For?</h2>
+          <p class="text-gray-800 leading-relaxed">
+            Raffaello is designed for anyone who has a vision they want to bring
+            to life online, without getting lost in technical complexities. It's
+            ideal for artists wanting to showcase their portfolio, small
+            business owners building their online presence, NGOs sharing their
+            mission, educators creating resources, writers publishing their
+            work, and individuals building personal sites or online communities.
+            If you have a story to tell, a project to share, or a business to
+            grow, Raffaello is built for you. Raffaello is the ultimate tool
+            whether you are a professional, a learner or a business owner who
+            wants a website for his business.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section: Join the Movement for Accessible Creation -->
+      <section class="py-12">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-semibold mb-6">
+            Join the Movement for Accessible Creation
+          </h2>
+          <p class="text-gray-800 leading-relaxed mb-8">
+            We believe the web should be a space for everyone to create and
+            share. Raffaello is our contribution to making that vision a reality
+            – a tool built to empower you, unlock your creative potential, and
+            provide a truly democratic pathway to building online. Don't let
+            complexity hold you back. Your vision is ready to be shared with the
+            world.
+          </p>
+          <a href="https://www.raffaello.dev/en/" class="bg-blue-500 text-white py-3 px-6 rounded-md hover:bg-blue-700 transition duration-300 inline-block">Explore Raffaello and Start Creating for Free</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer py-8">
+      <div class="container mx-auto px-4 text-center">
+        <p class="text-gray-600">© 2024 Raffaello. All rights reserved.</p>
+        <div class="mt-4 space-x-4">
+          <a href="#" class="text-gray-600 hover:text-gray-800">About Us</a>
+          <a href="#" class="text-gray-600 hover:text-gray-800">Privacy Policy</a>
+          <a href="#" class="text-gray-600 hover:text-gray-800">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Scroll-triggered animation
+      window.addEventListener('scroll', () =&amp;amp;amp;amp;amp;amp;gt; {
+          const header = document.querySelector('header');
+          if (window.scrollY &amp;amp;amp;amp;amp;amp;gt; 50) {
+              header.classList.add('fade-in');
+          } else {
+              header.classList.remove('fade-in');
+          }
+      });
+    </script>
+  
+
+</body></html>
