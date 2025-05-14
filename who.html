@@ -1,0 +1,322 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Story Behind Raffaello: Meet Ralph - Wikipedia Clone</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      /* General Styles */
+      body {
+          font-family: sans-serif;
+          line-height: 1.6;
+          color: #222;
+          background-color: #f9f9f9;
+      }
+
+      .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 20px;
+      }
+
+      /* Headings */
+      h1, h2, h3 {
+          color: #000;
+          margin-top: 1.5em;
+          margin-bottom: 0.5em;
+          font-weight: bold;
+          border-bottom: 1px solid #a2a9b1;
+          padding-bottom: 3px;
+      }
+
+      h1 {
+          font-size: 2em;
+          border-bottom: none;
+      }
+
+      h2 {
+          font-size: 1.5em;
+      }
+
+      h3 {
+          font-size: 1.2em;
+      }
+
+      /* Paragraphs */
+      p {
+          margin-bottom: 1em;
+      }
+
+      /* Links */
+      a {
+          color: #0645AD;
+          text-decoration: none;
+      }
+
+      a:hover {
+          text-decoration: underline;
+      }
+
+      /* Tables */
+      table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-bottom: 1em;
+          background-color: #fff;
+          border: 1px solid #a2a9b1;
+      }
+
+      th, td {
+          border: 1px solid #a2a9b1;
+          padding: 8px;
+          text-align: left;
+      }
+
+      th {
+          background-color: #eaecf0;
+          font-weight: bold;
+      }
+
+      /* Sidebar */
+      .sidebar {
+          width: 250px;
+          float: left;
+          margin-right: 20px;
+          background-color: #f9f9f9;
+          border: 1px solid #a2a9b1;
+          padding: 10px;
+      }
+
+      .sidebar ul {
+          list-style: none;
+          padding: 0;
+      }
+
+      .sidebar li {
+          margin-bottom: 0.5em;
+      }
+
+      .sidebar li a {
+          color: #0645AD;
+      }
+
+      /* Content Area */
+      .content {
+          float: left;
+          width: calc(100% - 270px);
+      }
+
+      /* Clearfix */
+      .clearfix::after {
+          content: "";
+          display: table;
+          clear: both;
+      }
+
+      /* Images */
+      img {
+          max-width: 100%;
+          height: auto;
+      }
+
+      /* YouTube Preview Styles */
+      .youtube-preview-container {
+          float: right;
+          width: 320px;
+          height: 180px;
+          margin-left: 20px;
+          border: 1px solid #a2a9b1;
+          overflow: hidden;
+      }
+
+      .youtube-preview-container iframe {
+          width: 100%;
+          height: 100%;
+      }
+
+      .section-with-preview::after {
+          content: "";
+          display: table;
+          clear: both;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="container">
+      <div class="clearfix">
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <ul>
+            <li><a href="#">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Current events</a></li>
+            <li><a href="#">Random article</a></li>
+            <li><a href="#">About Wikipedia</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Donate</a></li>
+          </ul>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content">
+          <img src="https://en.wikipedia.org/static/images/icons/wikipedia.png" alt="Wikipedia Logo" class="mb-4" style="width: 50px;">
+          <h1>The Story Behind Raffaello: Meet Ralph</h1>
+          <img src="https://i.postimg.cc/QC1vqrbz/Ralph.jpg" alt="Ralph's Portrait" class="mb-4" style="width: 200px;">
+
+          <h2>The beginning of my journey</h2>
+          <p>
+            My name is Ralph
+            <span class="font-bold text-blue" style="color:blue">NDUWIMANA</span>, and my path to building Raffaello began right here in Canada. I'm
+            a self-taught developer, and my programming journey started by
+            diving into Flutter, then exploring Java, and later focusing on
+            Python. It was when I ventured into web development that I
+            encountered a landscape that felt unnecessarily complex, often
+            messy, and frustratingly brittle compared to other areas I had
+            explored. Yet, even amidst this complexity, I saw the web for what I
+            believe it truly is: a profoundly important technology, a vital
+            bridge connecting the digital and physical, powering everything from
+            personal stories to global communities. It holds immense potential
+            for everyone.
+          </p>
+
+          <h2>The Frustration That Fueled a Question</h2>
+          <p>
+            Despite the web's immense potential, I personally witnessed a
+            significant disconnect. While anyone could access information
+            online, the ability to <em>create</em> on the web seemed
+            increasingly out of reach for many. The early promise of a
+            democratic web felt overshadowed by the technical hurdles. I saw how
+            the evolution from simple editors to more complex builders, while
+            aiming for ease, often led to limitations, proprietary systems, and
+            a feeling of detachment from the very code that brought creations to
+            life. It genuinely felt like a barrier was being built, limiting who
+            could truly participate in shaping the digital world – and that
+            frustration fueled a question in my mind.
+          </p>
+
+          <div class="section-with-preview">
+            <h2>A Principle That Opened My Eyes</h2>
+            <div class="youtube-preview-container">
+              <iframe src="https://www.youtube.com/embed/PUv66718DII" frameborder="0" allowfullscreen=""></iframe>
+            </div>
+            <p>
+              A pivotal moment in my journey arrived when I watched
+              <strong>Bret Victor's "Inventing on Principle"</strong>
+              <a href="http://www.youtube.com/watch?v=PUv66718DII">[Link to Inventing on Principle talk]</a>. His powerful assertion – that
+              <strong>"Creators need an immediate connection to what they are
+                creating"</strong>
+              – resonated with me on a deep level. It illuminated the core issue
+              I had been feeling in web development and made me realize that
+              this disconnect and complexity weren't inherent; they were
+              products of the tools and approaches we were using. This principle
+              sparked the fundamental question: What if web creation could be
+              different? What if it could be intuitive, immediate, and truly
+              empowering for <em>anyone</em>?
+            </p>
+          </div>
+
+          <h2>A Mission Born from Personal Experience</h2>
+          <p>
+            This question, combined with my own background, ignited a deeply
+            personal mission: to help democratize creation on the web. I
+            envisioned a world where having a vision is the primary requirement
+            to build online, not having a specific technical skill set or access
+            to vast resources. My experiences growing up in Burundi profoundly
+            influenced this. I saw firsthand the profound impact of limited
+            digital access on communities there – witnessing the challenges
+            faced when essential information required arduous physical journeys.
+            This personal observation of the human cost solidified my resolve to
+            build a tool that could directly address the barriers of skills and
+            resources faced by so many, both in developing countries and around
+            the world.
+          </p>
+
+          <h2>Introducing Raffaello: Putting the Power Back in Your Hands</h2>
+          <p>
+            Out of this personal journey, these frustrations, this inspiration,
+            and this mission, Raffaello
+            <a href="https://www.raffaello.dev/en/">[Link to Raffaello App]</a>
+            was born. It is the project I set out to build based on the belief
+            that creating on the web should be direct, powerful, and accessible
+            to everyone. Raffaello is designed to be a tool that allows
+            <em>you</em>, the creator, to focus on your vision and bring it to
+            life, providing that immediate connection to what you are creating,
+            just as Bret Victor described. We've worked to make it simple enough
+            for anyone to start, but powerful enough to realize complex ideas,
+            all without trapping you in a "walled garden."
+          </p>
+
+          <h2>The Name: An Homage to Creative Mastery</h2>
+          <img src="https://hips.hearstapps.com/hmg-prod/images/raphael-gettyimages-656578432.jpg?resize=1200:*" alt="Raphael Sanzio" class="mb-4" style="width: 150px;">
+          <p>
+            The name Raffaello is a deliberate and significant personal homage
+            to the High Renaissance master, <strong>Raphael Sanzio</strong>
+            <a href="https://hips.hearstapps.com/hmg-prod/images/raphael-gettyimages-656578432.jpg?resize=1200:*">[Link to Raphael Sanzio image]</a>. I was particularly inspired by his revolutionary use of
+            <strong>cartoons</strong> – large preparatory drawings that were
+            vital for detailed planning, facilitated collaboration with his
+            workshop, enabled quick prototyping and iteration before the final
+            piece, and ultimately ensured the artist's full creative control
+            over his monumental works. This historical method embodies the very
+            principles I strive for in Raffaello the tool: enabling seamless
+            collaboration (between the creator and the tool), facilitating rapid
+            prototyping of ideas, and ensuring the creator always maintains
+            complete control over their final digital masterpiece.
+          </p>
+
+          <h2>Connecting with the Community: Media &amp; Links</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>URL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>My Portrait</td>
+                <td>
+                  <a href="https://i.postimg.cc/QC1vqrbz/Ralph.jpg">https://i.postimg.cc/QC1vqrbz/Ralph.jpg</a>
+                </td>
+              </tr>
+              <tr>
+                <td>Talk Inspiration</td>
+                <td>
+                  <a href="http://www.youtube.com/watch?v=PUv66718DII">http://www.youtube.com/watch?v=PUv66718DII</a>
+                </td>
+              </tr>
+              <tr>
+                <td>Raffaello App</td>
+                <td>
+                  <a href="https://www.raffaello.dev/en/">https://www.raffaello.dev/en/</a>
+                </td>
+              </tr>
+              <tr>
+                <td>Raphael Sanzio Image</td>
+                <td>
+                  <a href="https://hips.hearstapps.com/hmg-prod/images/raphael-gettyimages-656578432.jpg?resize=1200:*">https://hips.hearstapps.com/hmg-prod/images/raphael-gettyimages-656578432.jpg?resize=1200:*</a>
+                </td>
+              </tr>
+              <tr>
+                <td>(Optional: My LinkedIn Profile)</td>
+                <td><a href="[Your LinkedIn URL]">[Your LinkedIn URL]</a></td>
+              </tr>
+              <tr>
+                <td>(Optional: Early project/portfolio link if relevant)</td>
+                <td><a href="[Your Portfolio URL]">[Your Portfolio URL]</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Join the Movement for Accessible Creation</h2>
+          <p>
+            My hope is that Raffaello can be a tool for empowerment, helping to
+            unlock the creative potential of individuals and communities
+            worldwide. It's a step towards a web that is truly democratic and
+            accessible to all. I invite you to explore, create, and be part of
+            building this more inclusive digital future.
+          </p>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>
