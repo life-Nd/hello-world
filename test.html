@@ -1,37 +1,406 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
-    <meta charset="UTF-8">
-    <title>Alert Popup Example</title>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>raffaello.dev Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
     <style>
       body {
         font-family: Arial, sans-serif;
-        text-align: center;
-        padding: 50px;
       }
-
-      button {
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+      :root {
+        --primary: #59fc53;
+        --secondary: #ffffff;
       }
-
-      button:hover {
-        background-color: #45a049;
+      .bg-bento {
+        background: linear-gradient(135deg, #59fc53 0%, #fff 100%);
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
       }
     </style>
   </head>
-  <body>
-    <h1>Click the Button</h1>
-    <button onclick="showAlert()">Show Alert</button>
+  <body class="min-h-screen bg-gradient-to-tr from-[#fafffb] to-[#ecfdf5]">
+    <!-- Header -->
+    <header
+      class="flex items-center justify-between px-8 py-5 bg-white/80 shadow-sm sticky top-0 z-30 font-sans text-base text-[oklch(0.746477_0.0216_264.436)]"
+      style="--primary: #59fc53; --secondary: #ffffff; content-visibility: auto;"
+    >
+      <a
+        href="/"
+        aria-label="Raffaello.dev Home"
+        tabindex="0"
+        class="flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.746477_0.0216_264.436)] rounded transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
+      >
+        <span class="relative block" style="width:40px;height:40px;">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 40 40"
+            fill="none"
+            aria-hidden="true"
+            class="w-10 h-10"
+          >
+            <circle
+              cx="20"
+              cy="20"
+              r="18"
+              stroke="var(--primary)"
+              stroke-width="3"
+              fill="var(--secondary)"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                values="40;0;40"
+                dur="2s"
+                repeatCount="indefinite"
+              />
+            </circle>
+            <text
+              x="50%"
+              y="54%"
+              text-anchor="middle"
+              alignment-baseline="middle"
+              font-size="18"
+              fill="var(--primary)"
+              font-family="Arial"
+              dy=".1em"
+            >
+              r
+            </text>
+          </svg>
+        </span>
+        <span class="font-bold text-lg tracking-tight hidden sm:inline"
+          >raffaello.dev</span
+        >
+      </a>
+      <nav aria-label="Main navigation" class="">
+        <button
+          id="menu-toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          class="sm:hidden w-12 h-12 flex items-center justify-center rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.746477_0.0216_264.436)] transition duration-300 ease-in-out"
+          onclick="this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='true'?'false':'true');document.getElementById('mobile-menu').classList.toggle('hidden');"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-7 h-7"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+        <ul class="hidden sm:flex gap-6 ml-4">
+          <li>
+            <a
+              href="#dashboard"
+              class="inline-block px-4 py-3 rounded transition-colors duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.746477_0.0216_264.436)] hover:bg-[oklch(0.746477_0.0216_264.436)/10] active:bg-[oklch(0.746477_0.0216_264.436)/20]"
+              >Dashboard</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="inline-block px-4 py-3 rounded transition-colors duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.746477_0.0216_264.436)] hover:bg-[oklch(0.746477_0.0216_264.436)/10] active:bg-[oklch(0.746477_0.0216_264.436)/20]"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#ai"
+              class="inline-block px-4 py-3 rounded transition-colors duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.746477_0.0216_264.436)] hover:bg-[oklch(0.746477_0.0216_264.436)/10] active:bg-[oklch(0.746477_0.0216_264.436)/20]"
+              >AI Tool</a
+            >
+          </li>
+          <li>
+            <a
+              href="#support"
+              class="inline-block px-4 py-3 rounded transition-colors duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.746477_0.0216_264.436)] hover:bg-[oklch(0.746477_0.0216_264.436)/10] active:bg-[oklch(0.746477_0.0216_264.436)/20]"
+              >Support</a
+            >
+          </li>
+          <li>
+            <a
+              href="#new"
+              class="inline-block px-4 py-3 rounded bg-[oklch(0.746477_0.0216_264.436)] text-white shadow-md transition-transform duration-300 ease-in-out hover:-translate-y-1 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.746477_0.0216_264.436)]"
+              >New Project</a
+            >
+          </li>
+        </ul>
+        <div
+          id="mobile-menu"
+          class="sm:hidden absolute left-0 top-full w-full bg-white/95 shadow-lg transition-all duration-300 ease-in-out hidden z-40 animate-slide-down"
+          style="backdrop-filter: blur(6px);"
+        >
+          <ul class="flex flex-col gap-1 py-3 px-6">
+            <li>
+              <a
+                href="#dashboard"
+                class="block px-4 py-4 rounded transition-colors duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.746477_0.0216_264.436)] hover:bg-[oklch(0.746477_0.0216_264.436)/10]"
+                >Dashboard</a
+              >
+            </li>
+            <li>
+              <a
+                href="#projects"
+                class="block px-4 py-4 rounded transition-colors duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.746477_0.0216_264.436)] hover:bg-[oklch(0.746477_0.0216_264.436)/10]"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a
+                href="#ai"
+                class="block px-4 py-4 rounded transition-colors duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.746477_0.0216_264.436)] hover:bg-[oklch(0.746477_0.0216_264.436)/10]"
+                >AI Tool</a
+              >
+            </li>
+            <li>
+              <a
+                href="#support"
+                class="block px-4 py-4 rounded transition-colors duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.746477_0.0216_264.436)] hover:bg-[oklch(0.746477_0.0216_264.436)/10]"
+                >Support</a
+              >
+            </li>
+            <li>
+              <a
+                href="#new"
+                class="block px-4 py-4 rounded bg-[oklch(0.746477_0.0216_264.436)] text-white shadow-md transition-transform duration-300 ease-in-out hover:-translate-y-1 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.746477_0.0216_264.436)]"
+                >New Project</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <style>
+        @media (max-width: 640px) {
+          header { padding-left: 1rem; padding-right: 1rem; }
+        }
+        @keyframes slide-down {
+          from { opacity: 0; transform: translateY(-12px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slide-down { animation: slide-down 0.3s ease-in-out; }
+      </style>
+    </header>
 
-    <script>
-      function showAlert() {
-        alert("Hello! This is an alert popup.");
-      }
-    </script>
-  
+    <!-- Main Content -->
+    <main
+      class="max-w-7xl mx-auto p-6 mt-5 grid gap-6 grid-cols-1 md:grid-cols-3 auto-rows-[minmax(170px,auto)]"
+    >
+      <!-- Hero/Welcome (spans 2 cols) -->
+      <section
+        class="col-span-1 md:col-span-2 rounded-2xl shadow-lg bg-white/90 p-7 flex flex-col justify-between relative overflow-hidden"
+      >
+        <div>
+          <h1 class="text-3xl font-extrabold mb-2 text-[#222]">
+            Welcome back to <span class="text-[#59fc53]">raffaello</span>.dev!
+          </h1>
+          <p class="text-[#444] mb-3 max-w-xl">
+            Empowering <span class="font-bold text-[#59fc53]">anyone</span> to
+            create a website effortlessly—use AI, code, or drag and drop. Your
+            creative journey starts here.
+          </p>
+          <div class="flex gap-3 mt-2">
+            <button
+              class="btn btn-success bg-[#59fc53] border-none text-[#222] hover:bg-[#47e045]"
+            >
+              Start Building
+            </button>
+            <button
+              class="btn btn-outline btn-primary border-[#59fc53] text-[#59fc53] hover:bg-[#59fc53] hover:text-[#222]"
+            >
+              Try AI Assistant
+            </button>
+          </div>
+        </div>
+        <img
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+          alt="dashboard illustration"
+          class="absolute right-4 bottom-2 w-36 rounded-xl opacity-80 hidden md:block shadow-lg"
+        />
+      </section>
 
-</body></html>
+      <!-- Quick Actions -->
+      <section
+        class="rounded-2xl shadow-lg bg-white/90 p-6 flex flex-col justify-between"
+      >
+        <h2 class="text-xl font-semibold mb-4">Quick Actions</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <button
+            class="btn btn-outline btn-success border-[#59fc53] text-[#222] hover:bg-[#59fc53] hover:text-[#222] flex flex-col gap-1"
+          >
+            <i class="fa-solid fa-plus text-lg"></i> New Project
+          </button>
+          <button
+            class="btn btn-outline btn-info border-[#59fc53] text-[#222] hover:bg-[#59fc53] hover:text-[#222] flex flex-col gap-1"
+          >
+            <i class="fa-solid fa-wand-magic-sparkles text-lg"></i> AI Builder
+          </button>
+          <button
+            class="btn btn-outline btn-warning border-[#59fc53] text-[#222] hover:bg-[#59fc53] hover:text-[#222] flex flex-col gap-1"
+          >
+            <i class="fa-solid fa-code text-lg"></i> Code Editor
+          </button>
+          <button
+            class="btn btn-outline btn-accent border-[#59fc53] text-[#222] hover:bg-[#59fc53] hover:text-[#222] flex flex-col gap-1"
+          >
+            <i class="fa-solid fa-grip text-lg"></i> Drag &amp; Drop
+          </button>
+        </div>
+      </section>
+
+      <!-- Latest Projects (spans 2 rows) -->
+      <section
+        class="md:row-span-2 rounded-2xl shadow-lg bg-white/90 p-6 flex flex-col"
+      >
+        <h2 class="text-xl font-semibold mb-4">Your Latest Projects</h2>
+        <div class="flex-1 overflow-y-auto scrollbar-hide">
+          <ul class="divide-y divide-gray-100">
+            <li class="py-3 flex items-center gap-3">
+              <div
+                class="w-12 h-12 bg-[#59fc53]/20 rounded-lg flex items-center justify-center"
+              >
+                <i class="fa-solid fa-globe text-[#59fc53] text-xl"></i>
+              </div>
+              <div class="flex-1">
+                <div class="text-lg font-bold">Portfolio Site</div>
+                <div class="text-gray-500 text-sm">
+                  Built using Drag &amp; Drop • Last edited 2 days ago
+                </div>
+              </div>
+              <button
+                class="btn btn-xs btn-outline border-[#59fc53] text-[#59fc53] hover:bg-[#59fc53] hover:text-[#222]"
+              >
+                Open
+              </button>
+            </li>
+            <li class="py-3 flex items-center gap-3">
+              <div
+                class="w-12 h-12 bg-[#59fc53]/20 rounded-lg flex items-center justify-center"
+              >
+                <i class="fa-solid fa-robot text-[#59fc53] text-xl"></i>
+              </div>
+              <div class="flex-1">
+                <div class="text-lg font-bold">Startup Landing</div>
+                <div class="text-gray-500 text-sm">
+                  Built with AI • Last edited 5 days ago
+                </div>
+              </div>
+              <button
+                class="btn btn-xs btn-outline border-[#59fc53] text-[#59fc53] hover:bg-[#59fc53] hover:text-[#222]"
+              >
+                Open
+              </button>
+            </li>
+            <li class="py-3 flex items-center gap-3">
+              <div
+                class="w-12 h-12 bg-[#59fc53]/20 rounded-lg flex items-center justify-center"
+              >
+                <i class="fa-solid fa-code text-[#59fc53] text-xl"></i>
+              </div>
+              <div class="flex-1">
+                <div class="text-lg font-bold">E-Commerce Store</div>
+                <div class="text-gray-500 text-sm">
+                  Built with Code • Last edited 1 week ago
+                </div>
+              </div>
+              <button
+                class="btn btn-xs btn-outline border-[#59fc53] text-[#59fc53] hover:bg-[#59fc53] hover:text-[#222]"
+              >
+                Open
+              </button>
+            </li>
+          </ul>
+        </div>
+        <a href="#" class="text-[#59fc53] hover:underline text-sm mt-4 self-end"
+          >View All Projects <i class="fa-solid fa-arrow-right"></i
+        ></a>
+      </section>
+
+      <!-- AI Activity Feed -->
+      <section class="rounded-2xl shadow-lg bg-white/90 p-6 flex flex-col">
+        <h2 class="text-xl font-semibold mb-4">AI Activity</h2>
+        <ul class="flex flex-col gap-3 text-sm">
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-brain text-[#59fc53] text-lg"></i> AI
+            generated a landing page for
+            <span class="font-semibold">Startup Landing</span>
+            <span class="text-gray-400 ml-2">3 hours ago</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i
+              class="fa-solid fa-wand-magic-sparkles text-[#59fc53] text-lg"
+            ></i>
+            Auto-styled <span class="font-semibold">Portfolio Site</span>
+            <span class="text-gray-400 ml-2">1 day ago</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-comments text-[#59fc53] text-lg"></i> Chatbot
+            assisted in page optimization
+            <span class="text-gray-400 ml-2">2 days ago</span>
+          </li>
+        </ul>
+        <a href="#" class="text-[#59fc53] hover:underline text-xs mt-4 self-end"
+          >See Full AI History <i class="fa-solid fa-arrow-right"></i
+        ></a>
+      </section>
+
+      <!-- Tips & Resources -->
+      <section class="rounded-2xl shadow-lg bg-white/90 p-6 flex flex-col">
+        <h2 class="text-xl font-semibold mb-4">Tips &amp; Resources</h2>
+        <ul class="list-disc ml-5 text-sm text-gray-700 flex flex-col gap-2">
+          <li>
+            Check out the
+            <span class="text-[#59fc53] font-bold">AI assistant</span> for
+            instant site generation.
+          </li>
+          <li>
+            Use <span class="text-[#59fc53] font-bold">Drag &amp; Drop</span> to
+            visually edit your pages.
+          </li>
+          <li>
+            Combine <span class="text-[#59fc53] font-bold">code</span> with AI
+            for ultimate flexibility.
+          </li>
+          <li>
+            Access free templates in the
+            <a href="#" class="text-[#59fc53] underline">Templates Gallery</a>.
+          </li>
+        </ul>
+        <a
+          href="#"
+          class="mt-4 btn btn-xs btn-outline border-[#59fc53] text-[#59fc53] hover:bg-[#59fc53] hover:text-[#222]"
+          >Learn More</a
+        >
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-12 py-6 text-center bg-white/80 shadow-inner text-[#222]">
+      <span
+        >Made with <i class="fa-solid fa-heart text-[#59fc53]"></i> in Gatineau,
+        Quebec, Canada • © 2024 raffaello.dev</span
+      >
+    </footer>
+  </body>
+</html>
